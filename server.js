@@ -50,11 +50,9 @@ app.use('/logout',require("./routes/userRoutes.js"));
 
 app.use('/dashboard',require("./routes/userRoutes.js"));
 
-// Assuming you have a route like this in your server file
 app.use('/view-contact',require("./routes/userRoutes.js"));
 
 app.use('/createContact',require("./routes/userRoutes.js"));
-//app.use("/api/admin",require("./routes/adminRoutes.js"));
 
 app.use('/edit/:id',require("./routes/userRoutes.js"));
 
