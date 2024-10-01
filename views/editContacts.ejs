@@ -1,61 +1,129 @@
-<!-- views/editContact.ejs -->
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Contact</title>
     <style>
-        /* Add some basic styling for the edit form */
-        .edit-form {
-            max-width: 400px;
-            margin: 20px auto;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            background-color: #f9f9f9;
+        /* Base styles */
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            min-height: 100vh;
+            /* Ensures content fills viewport */
+            flex-direction: column;
         }
 
-        label {
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        input {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 16px;
-            box-sizing: border-box;
-        }
-
-        button {
-            padding: 10px;
-            cursor: pointer;
-            background-color: #007bff;
+        /* Header */
+        .header {
+            background-color: #343a40;
+            /* Dark blue */
             color: #fff;
+            padding: 1rem;
+        }
+
+        .header__title {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        /* Main content */
+        .main {
+            flex: 1;
+            /* Takes up remaining space in viewport */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        /* Edit form container */
+        .edit-form-container {
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            padding: 2rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin-bottom: 1rem;
+        }
+
+        /* Edit form */
+        .edit-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .edit-form__fieldset {
             border: none;
-            border-radius: 3px;
+            padding: 0;
+        }
+
+        .edit-form__legend {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .edit-form__field {
+            margin-bottom: 1rem;
+        }
+
+        .edit-form__label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .edit-form__input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
         }
     </style>
-</head>
+
 <body>
-    <h1>Edit Contact</h1>
+    <header class="header">
+        <h1 class="header__title">Edit Contact</h1>
+    </header>
 
-    <div class="edit-form">
-        <form action="/edit/<%= contact._id %>" method="post">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" value="<%= contact.name %>" required>
+    <main class="main">
+        <section class="edit-form-container">
+            <form class="edit-form" action="/edit/<%= contact._id %>" method="post">
+                <fieldset class="edit-form__fieldset">
+                    <legend class="edit-form__legend">Contact Details</legend>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" value="<%= contact.email %>" required>
+                    <div class="edit-form__field">
+                        <label for="name" class="edit-form__label">Name:</label>
+                        <input type="text" id="name" name="name" value="<%= contact.name %>" required
+                            class="edit-form__input">
+                    </div>
 
-            <label for="phone">Phone:</label>
-            <input type="tel" id="phone" name="phone" value="<%= contact.phone %>" required>
+                    <div class="edit-form__field">
+                        <label for="email" class="edit-form__label">Email:</label>
+                        <input type="email" id="email" name="email" value="<%= contact.email %>" required
+                            class="edit-form__input">
+                    </div>
 
-            <button type="submit">Save Changes</button>
-        </form>
-    </div>
+                    <div class="edit-form__field">
+                        <label for="phone" class="edit-form__label">Phone:</label>
+                        <input type="tel" id="phone" name="phone" value="<%= contact.phone %>" required
+                            class="edit-form__input">
+                    </div>
+                </fieldset>
 
-    <a href="/dashboard">Go back to Dashboard</a>
+                <button type="submit" class="edit-form__button">Save Changes</button>
+            </form>
+        </section>
+
+        <nav class="navigation">
+            <a href="/dashboard" class="navigation__link">Go back to Dashboard</a>
+        </nav>
+    </main>
+
 </body>
+
 </html>

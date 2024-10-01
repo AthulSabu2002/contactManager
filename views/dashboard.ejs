@@ -1,20 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Dashboard</title>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --background-color: #f5f7fa;
+            --text-color: #34495e;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .dashboard-container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            width: 90%;
+            max-width: 600px;
+        }
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        p {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        a, button {
+            display: inline-block;
+            padding: 0.75rem 1rem;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: var(--primary-color);
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-align: center;
+        }
+        a:hover, button:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+        button[type="submit"] {
+            background-color: var(--secondary-color);
+        }
+        button[type="submit"]:hover {
+            background-color: #27ae60;
+        }
+        @media (max-width: 480px) {
+            .dashboard-container {
+                width: 95%;
+                padding: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-   <!-- dashboard.ejs -->
-    <h1>Welcome to Your Dashboard</h1>
-    <p>This is your user dashboard.</p>
-
-    <a href="/view-contact">View Contacts</a> <!-- Link to the new "View Contacts" route -->
-
-    <a href="/createContact">Create Contact</a>
-
-    <form action="/logout" method="post">
-        <button type="submit">Logout</button>
-    </form>
-
+    <div class="dashboard-container">
+        <h1>Welcome to Your Dashboard</h1>
+        <p>This is your user dashboard.</p>
+        
+        <div class="button-container">
+            <a href="/view-contact">View Contacts</a>
+            <a href="/createContact">Create Contact</a>
+            <form action="/logout" method="post">
+                <button type="submit">Logout</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
