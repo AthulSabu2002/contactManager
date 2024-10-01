@@ -46,7 +46,8 @@ To get started with the Contact Manager website, follow these steps:
    ```env
    PORT=5000
    DATABASE_URL=mongodb://your-mongodb-url
-   SESSION_SECRET=your-session-secret
+   APP_PASSWORD=your-app-password-for-email
+   MYEMAIL=your-email
    ```
 
 4. Run the application:
