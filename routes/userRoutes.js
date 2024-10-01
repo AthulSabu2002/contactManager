@@ -33,7 +33,7 @@ app.use(express.static("public"));
 
 router.route("/").get((req,res) => {
   try{
-    res.send('hi')
+    res.render('home.ejs');
   }
   catch(err){
     res.send(err);
