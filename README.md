@@ -29,7 +29,7 @@ To get started with the Contact Manager website, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/contactManager.git
+   git clone https://github.com/AthulSabu2002/contactManager.git
    cd contactManager
    ```
 
