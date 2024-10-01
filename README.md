@@ -1,5 +1,5 @@
 
-# Contact Manager Website
+# ContactSphere
 
 Welcome to the Contact Manager website! This web application allows users to manage their contacts, providing features like creating, editing, and deleting contacts. Additionally, it includes user authentication, session management, and other functionalities.
 
